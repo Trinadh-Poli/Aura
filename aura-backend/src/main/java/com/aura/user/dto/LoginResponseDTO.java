@@ -1,0 +1,68 @@
+package com.aura.user.dto;
+
+/**
+ * DTO for login response
+ * Contains JWT token and user information
+ */
+public class LoginResponseDTO {
+    
+    private String token;  // JWT token
+    private String type = "Bearer";  // Token type (always "Bearer" for JWT)
+    private Long id;  // User ID
+    private String username;  // Username
+    private String email;  // Email
+    
+    // ==================== CONSTRUCTORS ====================
+    
+    public LoginResponseDTO() {
+    }
+    
+    public LoginResponseDTO(String token, Long id, String username, String email) {
+        this.token = token;
+        this.id = id;
+        this.username = username;
+        this.email = email;
+    }
+    
+    // ==================== GETTERS & SETTERS ====================
+    
+    public String getToken() {
+        return token;
+    }
+    
+    public void setToken(String token) {
+        this.token = token;
+    }
+    
+    public String getType() {
+        return type;
+    }
+    
+    public void setType(String type) {
+        this.type = type;
+    }
+    
+    public Long getId() {
+        return id;
+    }
+    
+    public void setId(Long id) {
+        this.id = id;
+    }
+    
+    public String getUsername() {
+        return username;
+    }
+    
+    public void setUsername(String username) {
+        this.username = username;
+    }
+    
+    public String getEmail() {
+        return email;
+    }
+    
+    public void setEmail(String email) {
+        this.email = email;
+    }
+}

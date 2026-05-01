@@ -1,0 +1,219 @@
+/* Header Bar Positioning and Styling */
+.header-bar {
+    /* Grid positioning is handled in styles.css */
+    /* Remove fixed positioning, left, width, and padding as they conflict with grid */
+}
+
+/* Header Left Section (Navigation + Search) */
+.header-left-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    /* spacing between nav and search */
+    width: 100%;
+    flex: 1;
+    /* allow left section to take remaining space and shrink as needed */
+    max-width: 64rem;
+    /* max-w-4xl */
+}
+
+/* Navigation Arrows Container */
+.nav-arrows-container {
+    display: flex;
+    gap: 0.5rem;
+    /* space-x-2 */
+}
+
+/* Navigation Button Base */
+.nav-button {
+    padding: 0.5rem;
+    /* p-2 */
+    border-radius: 9999px;
+    /* rounded-full */
+    transition: background-color 150ms, color 150ms;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Enabled Navigation Button */
+.nav-button:not([disabled]) {
+    color: white;
+    /* text-white */
+    background-color: rgba(0, 0, 0, 0.7);
+    /* bg-black/70 */
+}
+
+.nav-button:not([disabled]):hover {
+    background-color: rgba(0, 0, 0, 0.9);
+    /* hover:bg-black/90 */
+}
+
+/* Disabled Navigation Button */
+.nav-button:disabled {
+    color: #4b5563;
+    /* text-gray-600 */
+    background-color: rgba(0, 0, 0, 0.5);
+    /* bg-black/50 */
+    cursor: not-allowed;
+}
+
+/* Search Bar Styling */
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #374151;
+    /* bg-zinc-800 */
+    color: #9ca3af;
+    /* text-gray-400 */
+    border-radius: 9999px;
+    /* rounded-full */
+    height: 2rem;
+    /* h-10 */
+    padding-left: 1rem;
+    /* px-4 */
+    padding-right: 1rem;
+    /* px-4 */
+    padding-top: 0.5rem;
+    /* py-2 */
+    padding-bottom: 0.5rem;
+    /* py-2 */
+    width: 100%;
+    max-width: 28rem;
+    /* max-w-md */
+    transition: all 300ms;
+}
+
+.search-bar:focus-within {
+    box-shadow: 0 0 0 2px #4ade80;
+    /* focus-within:ring-2 focus-within:ring-green-400 */
+}
+
+/* Search Input */
+.search-input {
+    background-color: transparent;
+    color: white;
+    /* text-white */
+    outline: none;
+    width: 100%;
+    border: none;
+}
+
+.search-input::placeholder {
+    color: #9ca3af;
+    /* placeholder-gray-400 */
+}
+
+/* Utility and Profile Section */
+.header-right-section {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    /* space-x-2 */
+}
+
+/* Utility Icon Button */
+.utility-icon-button {
+    padding: 0.5rem;
+    /* p-2 */
+    border-radius: 9999px;
+    /* rounded-full */
+    color: rgba(255, 255, 255, 0.8);
+    /* text-white/80 */
+    transition: color 150ms, background-color 150ms;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.utility-icon-button:hover {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+    /* hover:bg-black/30 */
+}
+
+/* Profile Avatar Wrapper (Gradient Ring) */
+.profile-avatar-wrapper {
+    border-radius: 9999px;
+    /* rounded-full */
+    padding: 2px;
+    /* p-0.5 */
+    background: linear-gradient(to right, #4ade80, #22d3ee);
+    /* bg-gradient-to-r from-green-400 to-cyan-400 */
+    transition: all 300ms;
+    border: none;
+    cursor: pointer;
+}
+
+.profile-avatar-wrapper:hover {
+    box-shadow: 0 0 0 2px #111827, 0 0 0 4px #4ade80;
+    /* hover:ring-2 ring-offset-2 ring-offset-black ring-green-400 */
+}
+
+/* Profile Image */
+.profile-avatar-img {
+    width: 32px;
+    /* w-8 */
+    height: 32px;
+    /* h-8 */
+    border-radius: 9999px;
+    /* rounded-full */
+    object-fit: cover;
+    background-color: #374151;
+    /* bg-gray-700 */
+    padding: 2px;
+    /* p-0.5 */
+}
+
+/* Main Content Area */
+.main-content {
+    /* Fix horizontally to align with header and sidebar, allow vertical scrolling inside */
+    position: fixed;
+    top: 84px;
+    /* header height (80px) + small gap */
+    left: calc(var(--sidebar-width, 300px) + 20px);
+    width: calc(100vw - (var(--sidebar-width, 300px) + 80px));
+    bottom: 0;
+    /* stretch to bottom so it can scroll vertically */
+    overflow-y: auto;
+    z-index: 5;
+    /* below header (which has z-index:10) */
+
+    color: #9ca3af;
+    /* text-gray-400 */
+    padding: 1rem;
+    /* p-4 */
+}
+
+.content-title {
+    font-size: 1.25rem;
+    /* text-xl */
+    font-weight: 700;
+    /* font-bold */
+    color: white;
+    margin-bottom: 1rem;
+    /* mb-4 */
+}
+
+.content-info {
+    margin-top: 0.5rem;
+    /* mt-2 */
+    font-size: 0.875rem;
+    /* text-sm */
+    color: #4ade80;
+    /* text-green-400 */
+}
+
+.scrollable-area {
+    height: 1000px;
+    background-color: rgba(55, 65, 81, 0.5);
+    /* bg-gray-800/50 */
+    border-radius: 0.5rem;
+    /* rounded-lg */
+    padding: 1.5rem;
+    /* p-6 */
+    margin-top: 1.5rem;
+    /* mt-6 */
+}

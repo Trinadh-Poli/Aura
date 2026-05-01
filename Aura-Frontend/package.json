@@ -1,0 +1,17 @@
+{
+  "name": "aura-workspace",
+  "private": true,
+  "scripts": {
+    "dev": "cd Aura && npm run dev",
+    "build": "cd Aura && npm run build",
+    "lint": "cd Aura && npm run lint",
+    "preview": "cd Aura && npm run preview",
+    "install:app": "cd Aura && npm install"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "baseline-browser-mapping": "^2.10.13",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.14"
+  }
+}

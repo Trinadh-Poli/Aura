@@ -1,0 +1,244 @@
+/* Importing the font for aesthetic consistency */
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap'); */
+@import "tailwindcss";
+/* --- Global and Layout Styles --- */
+.app-container {
+    min-height: 100vh;
+    background-color: #000;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding-top: 2rem; /* pt-8 */
+    font-family: 'Inter', sans-serif;
+}
+
+@media (min-width: 768px) { /* md:pt-16 */
+    .app-container {
+        padding-top: 4rem;
+    }
+    .login-card {
+        padding-left: 0; /* md:px-0 */
+        padding-right: 0; /* md:px-0 */
+    }
+}
+
+.login-card {
+    width: 100%;
+    max-width: 24rem; /* max-w-sm */
+    padding-left: 1.5rem; /* px-6 */
+    padding-right: 1.5rem; /* px-6 */
+}
+
+/* --- Typography and Header --- */
+.header-title {
+    font-size: 1.875rem; /* text-3xl */
+    font-weight: 700; /* font-bold */
+    color: #fff; /* text-white */
+    margin-bottom: 2.5rem; /* mb-10 */
+    text-align: center; /* text-center */
+}
+
+/* --- Form Elements --- */
+.form-label {
+    display: block;
+    font-size: 0.875rem; /* text-sm */
+    font-weight: 700; /* font-bold */
+    color: #fff; /* text-white */
+}
+
+.input-field {
+    width: 100%;
+    background-color: #262626; /* bg-neutral-800 */
+    color: #fff;
+    padding: 0.75rem 1rem; /* py-3 px-4 */
+    padding-right: 3rem; /* Adjusted for icon */
+    border-radius: 0.5rem; /* rounded-lg */
+    border: 2px solid #525252; /* border-2 border-neutral-600 */
+    transition: all 0.2s;
+    font-size: 1rem; /* text-base */
+}
+.input-field::placeholder {
+    color: #a3a3a3; /* placeholder-neutral-400 */
+}
+.input-field:focus {
+    border-color: #fff; /* focus:border-white */
+    outline: none;
+}
+
+.input-container-relative {
+    position: relative;
+}
+
+.input-icon-envelope {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding-right: 1rem;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+    color: #a3a3a3; /* text-neutral-400 */
+}
+
+/* --- Buttons --- */
+.primary-button {
+    width: 100%;
+    background-color: #10b981; /* bg-green-500 */
+    color: #000;
+    padding: 1rem; /* py-4 */
+    border-radius: 9999px; /* rounded-full */
+    font-weight: 700; /* font-bold */
+    text-transform: uppercase;
+    font-size: 1rem; /* text-base */
+    transition: background-color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 10px 15px -3px rgba(16, 185, 129, 0.2), 0 4px 6px -2px rgba(16, 185, 129, 0.05); /* shadow-lg shadow-green-500/20 */
+}
+.primary-button:hover {
+    background-color: #4ade80; /* hover:bg-green-400 */
+}
+
+.secondary-button {
+    width: 100%;
+    background-color: #fff; /* bg-white */
+    color: #000;
+    padding: 1rem;
+    border-radius: 9999px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1rem;
+    transition: background-color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 10px 15px -3px rgba(255, 255, 255, 0.2), 0 4px 6px -2px rgba(255, 255, 255, 0.05);
+}
+.secondary-button:hover {
+    background-color: #e5e5e5; /* hover:bg-neutral-200 */
+}
+
+.reset-button {
+    width: 100%;
+    background-color: #262626; /* bg-neutral-800 */
+    border: 1px solid #fff; /* border border-white */
+    color: #fff;
+    padding: 1rem;
+    border-radius: 9999px;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1rem;
+    transition: background-color 0.2s;
+}
+.reset-button:hover {
+    background-color: #404040; /* hover:bg-neutral-700 */
+}
+
+/* --- Social Button (Phone) --- */
+.social-button {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: 9999px;
+    font-weight: 700;
+    transition: all 0.2s;
+    font-size: 0.875rem;
+    letter-spacing: 0.05em; /* tracking-wider */
+    border: 1px solid #525252; /* border border-neutral-600 */
+    color: #fff;
+    background-color: #000; /* bg-black */
+}
+.social-button:hover {
+    border-color: #fff; /* hover:border-white */
+}
+.social-button-icon {
+    position: absolute;
+    left: 1rem; /* left-4 */
+}
+.phone-icon-placeholder {
+    width: 1.5rem; /* w-6 */
+    height: 1.5rem; /* h-6 */
+    border: 2px solid #fff;
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.875rem; /* text-sm */
+    font-weight: 300; /* font-light */
+}
+
+/* --- Divider --- */
+.divider-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem; /* mb-6 */
+}
+.divider-line {
+    flex-grow: 1;
+    border-top: 1px solid #525252; /* border-t border-neutral-700 */
+}
+.divider-text {
+    flex-shrink: 0;
+    margin: 0 1rem; /* mx-4 */
+    color: #a3a3a3; /* text-neutral-400 */
+    font-size: 0.875rem;
+    font-weight: 600; /* font-semibold */
+    text-transform: uppercase;
+}
+
+/* --- Utility / Helper Classes --- */
+.mb-8 { margin-bottom: 2rem; }
+.space-y-6 > * + * { margin-top: 1.5rem; }
+.space-y-4 > * + * { margin-top: 1rem; }
+.text-center { text-align: center; }
+.text-xs { font-size: 0.75rem; }
+.text-sm { font-size: 0.875rem; }
+.text-lg { font-size: 1.125rem; }
+.text-white { color: #fff; }
+.text-neutral-400 { color: #a3a3a3; }
+.text-neutral-300 { color: #d4d4d4; }
+.text-neutral-500 { color: #737373; }
+.font-bold { font-weight: 700; }
+.mt-4 { margin-top: 1rem; }
+.mb-10 { margin-bottom: 2.5rem; }
+.mt-8 { margin-top: 2rem; }
+.mb-8 { margin-bottom: 2rem; }
+.mt-6 { margin-top: 1.5rem; }
+.mb-6 { margin-bottom: 1.5rem; }
+.pt-6 { padding-top: 1.5rem; }
+.pt-2 { padding-top: 0.5rem; }
+.pt-4 { padding-top: 1rem; }
+
+/* Link Styles */
+.link-text {
+    color: #fff;
+    font-weight: 700;
+    transition: color 0.2s;
+}
+.link-text:hover {
+    color: #10b981; /* hover:text-green-500 */
+}
+.sub-link-text {
+    color: #a3a3a3;
+    font-weight: 700;
+    font-size: 0.75rem;
+    transition: color 0.2s;
+}
+.sub-link-text:hover {
+    color: #fff;
+}
+.link-divider {
+    color: #737373;
+}
+.border-top-neutral {
+    border-top: 1px solid #525252; /* border-t border-neutral-700 */
+}
+.account-display {
+    color: #fff;
+    font-weight: 500;
+    word-break: break-all;
+    background-color: #262626;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #525252;
+}

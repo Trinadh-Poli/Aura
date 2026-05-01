@@ -1,0 +1,384 @@
+@baseUrl = http://localhost:8080/api
+@authToken = Bearer <your_token_here>
+@contentType = application/json
+
+### ------------------------------------------------------------------------
+### Album Controller
+### ------------------------------------------------------------------------
+
+### Create Album
+POST {{baseUrl}}/artist/albums
+Authorization: {{authToken}}
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="title"
+
+My New Album
+--boundary
+Content-Disposition: form-data; name="description"
+
+Album Description
+--boundary
+Content-Disposition: form-data; name="coverImage"; filename="cover.jpg"
+Content-Type: image/jpeg
+
+< ./cover.jpg
+--boundary--
+
+### Get Albums by Artist
+GET {{baseUrl}}/artist/albums/artist/1
+Authorization: {{authToken}}
+
+### Get Album by ID
+GET {{baseUrl}}/artist/albums/1
+Authorization: {{authToken}}
+
+### Update Album
+PUT {{baseUrl}}/artist/albums/1
+Authorization: {{authToken}}
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="title"
+
+Updated Album Title
+--boundary--
+
+### Delete Album
+DELETE {{baseUrl}}/artist/albums/1
+Authorization: {{authToken}}
+
+
+### ------------------------------------------------------------------------
+### Artist Controller
+### ------------------------------------------------------------------------
+
+### Update Artist Profile
+PUT {{baseUrl}}/artist/profile?userId=1
+Authorization: {{authToken}}
+Content-Type: {{contentType}}
+
+{
+  "bio": "Updated bio",
+  "socialLinks": "https://twitter.com/artist"
+}
+
+### Get Own Profile
+GET {{baseUrl}}/artist/me?userId=1
+Authorization: {{authToken}}
+
+### Get Public Profile
+GET {{baseUrl}}/artist/profile/1
+
+
+### ------------------------------------------------------------------------
+### Song Controller
+### ------------------------------------------------------------------------
+
+### Get My Songs
+GET {{baseUrl}}/artist/songs/1/my-songs
+Authorization: {{authToken}}
+
+### Upload Song to Album
+POST {{baseUrl}}/artist/songs/album/1
+Authorization: {{authToken}}
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="title"
+
+My New Song
+--boundary
+Content-Disposition: form-data; name="file"; filename="song.mp3"
+Content-Type: audio/mpeg
+
+< ./song.mp3
+--boundary--
+
+### Get Artist Songs
+GET {{baseUrl}}/artist/songs/artist/1
+
+### Get Songs by Album
+GET {{baseUrl}}/artist/songs/album/1
+
+### Get Song by ID
+GET {{baseUrl}}/artist/songs/1
+
+### Update Song
+PUT {{baseUrl}}/artist/songs/1
+Authorization: {{authToken}}
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="title"
+
+Updated Song Title
+--boundary--
+
+### Delete Song
+DELETE {{baseUrl}}/artist/songs/1
+Authorization: {{authToken}}
+
+
+### ------------------------------------------------------------------------
+### Follow Controller
+### ------------------------------------------------------------------------
+
+### Follow User
+POST {{baseUrl}}/follow/user/2
+Authorization: {{authToken}}
+
+### Unfollow User
+DELETE {{baseUrl}}/follow/user/2
+Authorization: {{authToken}}
+
+### Check if Following User
+GET {{baseUrl}}/follow/check/2
+Authorization: {{authToken}}
+
+### Get Following List
+GET {{baseUrl}}/follow/following/1
+
+### Get Followers List
+GET {{baseUrl}}/follow/followers/1
+
+### Get User Stats
+GET {{baseUrl}}/follow/stats/1
+Authorization: {{authToken}}
+
+### Get Followers Count
+GET {{baseUrl}}/follow/count/followers/1
+
+### Get Following Count
+GET {{baseUrl}}/follow/count/following/1
+
+### Follow Artist
+POST {{baseUrl}}/follow/artist/1
+Authorization: {{authToken}}
+
+### Unfollow Artist
+DELETE {{baseUrl}}/follow/artist/1
+Authorization: {{authToken}}
+
+### Check if Following Artist
+GET {{baseUrl}}/follow/artist/1/check
+Authorization: {{authToken}}
+
+
+### ------------------------------------------------------------------------
+### Image Controller
+### ------------------------------------------------------------------------
+
+### Get Album Cover
+GET {{baseUrl}}/images/albums/1/cover.jpg
+
+### Get Song Cover
+GET {{baseUrl}}/images/covers/1/song.jpg
+
+### Get Profile Image
+GET {{baseUrl}}/images/profiles/1/profile.jpg
+
+### Get Artist Profile Image
+GET {{baseUrl}}/images/artists/1/profile/profile.jpg
+
+### Get Artist Header Image
+GET {{baseUrl}}/images/artists/1/header/header.jpg
+
+
+### ------------------------------------------------------------------------
+### Playlist Controller
+### ------------------------------------------------------------------------
+
+### Create Playlist
+POST {{baseUrl}}/playlists
+Authorization: {{authToken}}
+Content-Type: {{contentType}}
+
+{
+  "name": "My Playlist",
+  "description": "Awesome songs",
+  "isPublic": true
+}
+
+### Get User Playlists
+GET {{baseUrl}}/playlists/user/1
+Authorization: {{authToken}}
+
+### Get Public Playlists by User
+GET {{baseUrl}}/playlists/user/1/public
+
+### Search Playlists
+GET {{baseUrl}}/playlists/search?query=chill
+
+### Get Playlist (Owner)
+GET {{baseUrl}}/playlists/1
+Authorization: {{authToken}}
+
+### Get Public Playlist
+GET {{baseUrl}}/playlists/public/1
+
+### Update Playlist
+PUT {{baseUrl}}/playlists/1
+Authorization: {{authToken}}
+Content-Type: {{contentType}}
+
+{
+  "name": "Updated Playlist Name",
+  "description": "Updated description",
+  "isPublic": false
+}
+
+### Delete Playlist
+DELETE {{baseUrl}}/playlists/1
+Authorization: {{authToken}}
+
+### Add Song to Playlist
+POST {{baseUrl}}/playlists/1/songs/1
+Authorization: {{authToken}}
+
+### Remove Song from Playlist
+DELETE {{baseUrl}}/playlists/1/songs/1
+Authorization: {{authToken}}
+
+### Get Playlist Songs
+GET {{baseUrl}}/playlists/1/songs
+Authorization: {{authToken}}
+
+
+### ------------------------------------------------------------------------
+### Search Controller
+### ------------------------------------------------------------------------
+
+### Search All
+GET {{baseUrl}}/search?query=rock
+
+### Search Songs
+GET {{baseUrl}}/search/songs?query=rock
+
+### Search Albums
+GET {{baseUrl}}/search/albums?query=rock
+
+### Search Artists
+GET {{baseUrl}}/search/artists?query=rock
+
+### Search by Genre
+GET {{baseUrl}}/search/by-genre?genre=Rock
+
+### Get Trending Songs
+GET {{baseUrl}}/search/trending
+
+### Get Recent Songs
+GET {{baseUrl}}/search/recent
+
+
+### ------------------------------------------------------------------------
+### Streaming Controller
+### ------------------------------------------------------------------------
+
+### Stream Song
+GET {{baseUrl}}/stream/song/1
+
+### Download Song
+GET {{baseUrl}}/stream/song/1/download
+
+
+### ------------------------------------------------------------------------
+### User Controller
+### ------------------------------------------------------------------------
+
+### Create User (Register)
+POST {{baseUrl}}/users
+Content-Type: {{contentType}}
+
+{
+  "username": "newuser",
+  "email": "newuser@example.com",
+  "password": "password123"
+}
+
+### Verify User
+GET {{baseUrl}}/users/verify?token=verification_token
+
+### Resend Verification Email
+POST {{baseUrl}}/users/resend-verification
+Content-Type: {{contentType}}
+
+{
+  "email": "newuser@example.com"
+}
+
+### Login
+POST {{baseUrl}}/users/login
+Content-Type: {{contentType}}
+
+{
+  "email": "newuser@example.com",
+  "password": "password123"
+}
+
+### Forgot Password
+POST {{baseUrl}}/users/forgot-password
+Content-Type: {{contentType}}
+
+{
+  "email": "newuser@example.com"
+}
+
+### Reset Password
+POST {{baseUrl}}/users/reset-password
+Content-Type: {{contentType}}
+
+{
+  "token": "reset_token",
+  "newPassword": "newpassword123"
+}
+
+### Get All Users (Admin)
+GET {{baseUrl}}/users
+Authorization: {{authToken}}
+
+### Get User by ID
+GET {{baseUrl}}/users/1
+
+### Update User
+PUT {{baseUrl}}/users/1
+Authorization: {{authToken}}
+Content-Type: {{contentType}}
+
+{
+  "username": "updateduser"
+}
+
+### Delete User
+DELETE {{baseUrl}}/users/1
+Authorization: {{authToken}}
+
+### Add Role to User (Admin)
+POST {{baseUrl}}/users/1/roles
+Authorization: {{authToken}}
+Content-Type: {{contentType}}
+
+{
+  "role": "ROLE_ADMIN"
+}
+
+### Remove Role from User (Admin)
+DELETE {{baseUrl}}/users/1/roles/ROLE_ADMIN
+Authorization: {{authToken}}
+
+### Update User Profile
+PUT {{baseUrl}}/users/1/profile
+Authorization: {{authToken}}
+Content-Type: {{contentType}}
+
+{
+  "bio": "My bio"
+}
+
+### Get User Profile
+GET {{baseUrl}}/users/1/profile
+
+### Switch to Artist
+PUT {{baseUrl}}/users/1/switch-to-artist
+Authorization: {{authToken}}

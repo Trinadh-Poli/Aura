@@ -1,0 +1,10 @@
+UPDATE artists SET profile_image_url = 'https://i.pinimg.com/1200x/94/96/70/9496703730267a6e2fa02feb08acefdd.jpg', header_image_url = 'https://i.pinimg.com/1200x/fa/34/00/fa3400931a9321a4376bfa47a6d2ee4e.jpg' WHERE stage_name = 'Taylor Swift';
+UPDATE artists SET profile_image_url = 'https://i.pinimg.com/736x/46/10/b1/4610b1c8ba20f23d23e0821526f234fc.jpg', header_image_url = 'https://i.pinimg.com/736x/9d/27/cd/9d27cdf4794cd67169dd368026ef4371.jpg' WHERE stage_name = 'Lana Del Rey';
+UPDATE artists SET header_image_url = 'https://i.pinimg.com/736x/e2/d5/93/e2d59336ef18d782bce0cc96e69ab599.jpg' WHERE stage_name = 'Katy Perry';
+UPDATE artists SET header_image_url = 'https://i.pinimg.com/1200x/59/5c/69/595c6944806f5a8cf19235a20dc9c9d1.jpg' WHERE stage_name = 'Justin Bieber';
+UPDATE artists SET header_image_url = 'https://i.pinimg.com/1200x/d6/ee/8f/d6ee8fe43267c26fe10aef9cf0a42035.jpg' WHERE stage_name = 'Selena Gomez';
+UPDATE artists SET header_image_url = 'https://i.pinimg.com/1200x/3b/ec/94/3bec94df2223affd68e782eeb20de28a.jpg' WHERE stage_name = 'Ariana Grande';
+UPDATE artists SET header_image_url = 'https://variety.com/wp-content/uploads/2022/01/weeknd.2022.jpg?w=1000&h=562&crop=1' WHERE stage_name = 'The Weeknd';
+UPDATE artists SET profile_image_url = 'https://i.pinimg.com/736x/be/a3/0b/bea30bef5d51df0f7e80017e9ce33517.jpg', header_image_url = 'https://i.pinimg.com/1200x/ef/80/33/ef803383c83d3b76a1c20253eccd62ef.jpg' WHERE stage_name = 'Olivia Rodrigo';
+UPDATE artists SET profile_image_url = 'https://i.pinimg.com/736x/19/38/dd/1938dda352048f33c7af15c5b06f1614.jpg', header_image_url = 'https://i.pinimg.com/1200x/d2/a8/83/d2a883689e48d796c2a067e5600af55d.jpg' WHERE stage_name = 'One Direction';
+UPDATE artists SET profile_image_url = 'https://i.pinimg.com/736x/a6/30/d8/a630d812aaed5bcaeb7bf93fc3a1acd5.jpg', header_image_url = 'https://i.pinimg.com/736x/87/9c/11/879c11d31c21cfc9f693e58019d1b27f.jpg' WHERE stage_name = 'Sia';
